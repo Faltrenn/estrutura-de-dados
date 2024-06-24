@@ -16,11 +16,26 @@ import Foundation
 //distributionSort(v: &arr, n: arr.count)
 
 
-for i in 1...1 {
-    var arr = getRandomArray(n: 5)
-    print(arr)
-    print(testAlgorithm {
-        mergeSort(v: &arr, s: 0, e: arr.count-1)
-    })
-    print(arr)
+let fileURL = URL(fileURLWithPath: "arquivo.txt")
+
+do {
+    try "".write(to: fileURL, atomically: true, encoding: .utf8)
+    let file = try FileHandle(forWritingTo: fileURL)
+    
+    for i in 1...1000 {
+        var arr = getRandomArray(n: i)
+        
+        let time = testAlgorithm {
+            mergeSort(v: &arr, s: 0, e: i-1)
+        }
+        
+        let line = "\(i) \(time)\n"
+        if let data = line.data(using: .utf8) {
+            file.seekToEndOfFile()
+            file.write(data)
+        }
+    }
+    file.closeFile()
+} catch {
+    print(error)
 }
