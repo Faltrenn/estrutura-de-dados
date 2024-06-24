@@ -16,9 +16,11 @@ import Foundation
 //distributionSort(v: &arr, n: arr.count)
 
 
-for i in 1...1000 {
-    var arr = getRandomArray(n: i)
+for i in 1...1 {
+    var arr = getRandomArray(n: 5)
+    print(arr)
     print(testAlgorithm {
-        distributionSort(v: &arr, n: arr.count)
+        mergeSort(v: &arr, s: 0, e: arr.count-1)
     })
+    print(arr)
 }

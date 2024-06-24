@@ -53,9 +53,8 @@ func merge(v: inout [Int], s: Int, m: Int, e: Int) {
             q += 1
         }
     }
-    print("opa", w)
-    for i in (0..<(e - s + 1)).reversed() {
-        v[s + i - 1] = w[i]
+    for i in (0..<(e - s + 1)) {
+        v[s + i] = w[i]
     }
 }
 
