@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC7A3A3C2C26016100827348 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A3A3B2C26016100827348 /* main.swift */; };
 		CC7A3A4E2C28849200827348 /* algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A3A4D2C28849200827348 /* algorithms.swift */; };
+		CC7A3A502C29E22900827348 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7A3A4F2C29E22900827348 /* tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		CC7A3A382C26016100827348 /* Estrutura de Dados */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Estrutura de Dados"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7A3A3B2C26016100827348 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CC7A3A4D2C28849200827348 /* algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algorithms.swift; sourceTree = "<group>"; };
+		CC7A3A4F2C29E22900827348 /* tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				CC7A3A3B2C26016100827348 /* main.swift */,
 				CC7A3A4D2C28849200827348 /* algorithms.swift */,
+				CC7A3A4F2C29E22900827348 /* tests.swift */,
 			);
 			path = "Estrutura de Dados";
 			sourceTree = "<group>";
@@ -112,7 +115,6 @@
 			);
 			mainGroup = CC7A3A2F2C26016100827348;
 			packageReferences = (
-				CC7A3A4C2C26093D00827348 /* XCRemoteSwiftPackageReference "core-plot" */,
 			);
 			productRefGroup = CC7A3A392C26016100827348 /* Products */;
 			projectDirPath = "";
@@ -130,6 +132,7 @@
 			files = (
 				CC7A3A3C2C26016100827348 /* main.swift in Sources */,
 				CC7A3A4E2C28849200827348 /* algorithms.swift in Sources */,
+				CC7A3A502C29E22900827348 /* tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,17 +301,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CC7A3A4C2C26093D00827348 /* XCRemoteSwiftPackageReference "core-plot" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/core-plot/core-plot.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = CC7A3A302C26016100827348 /* Project object */;
 }
