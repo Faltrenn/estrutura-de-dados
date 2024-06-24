@@ -8,10 +8,16 @@
 import Foundation
 
 
-func testAlgorithm(execution: () -> Void) -> UInt64 {
+func testAlgorithm(file: FileHandle, difficulty: Int, execution: () -> Void) {
     let t1 = DispatchTime.now().uptimeNanoseconds
     execution()
-    return DispatchTime.now().uptimeNanoseconds - t1
+    let delta = DispatchTime.now().uptimeNanoseconds - t1
+    
+    let line = "\(difficulty) \(delta)\n"
+    if let data = line.data(using: .utf8) {
+        file.seekToEndOfFile()
+        file.write(data)
+    }
 }
 
 func getRandomArray(n: Int) -> [Int] {

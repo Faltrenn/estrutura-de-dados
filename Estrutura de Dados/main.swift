@@ -25,14 +25,8 @@ do {
     for i in 1...1000 {
         var arr = getRandomArray(n: i)
         
-        let time = testAlgorithm {
+        testAlgorithm(file: file, difficulty: i) {
             mergeSort(v: &arr, s: 0, e: i-1)
-        }
-        
-        let line = "\(i) \(time)\n"
-        if let data = line.data(using: .utf8) {
-            file.seekToEndOfFile()
-            file.write(data)
         }
     }
     file.closeFile()
