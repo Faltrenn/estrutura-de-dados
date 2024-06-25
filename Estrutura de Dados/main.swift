@@ -18,10 +18,7 @@ import Foundation
 
 let fileURL = URL(fileURLWithPath: "arquivo.txt")
 
-do {
-    try "".write(to: fileURL, atomically: true, encoding: .utf8)
-    let file = try FileHandle(forWritingTo: fileURL)
-    
+openFile(url: fileURL) { file in
     for i in 1...1000 {
         var arr = getRandomArray(n: i)
         
@@ -29,7 +26,4 @@ do {
             mergeSort(v: &arr, s: 0, e: i-1)
         }
     }
-    file.closeFile()
-} catch {
-    print(error)
 }

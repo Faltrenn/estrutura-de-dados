@@ -7,6 +7,19 @@
 
 import Foundation
 
+func openFile(url: URL, execution: (FileHandle) -> Void) {
+    do {
+        try "".write(to: fileURL, atomically: true, encoding: .utf8)
+        let file = try FileHandle(forWritingTo: fileURL)
+        
+        execution(file)
+        
+        file.closeFile()
+    } catch {
+        print(error)
+    }
+}
+
 func selectionSort(v: inout [Int], n: Int) {
     for i in 0..<n-1 {
         var m = i
