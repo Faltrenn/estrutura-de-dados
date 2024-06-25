@@ -10,6 +10,23 @@ import Foundation
 
 enum Cases {
     case BETTER, MEDIUM, WORST
+    
+    var fileSuffix: String {
+        get {
+            switch self {
+            case .BETTER:
+                "better"
+            case .MEDIUM:
+                "medium"
+            case .WORST:
+                "worst"
+            }
+        }
+    }
+}
+
+func getTestFileName(prefix: String, cs: Cases) -> String {
+    "\(prefix)-\(cs.fileSuffix).txt"
 }
 
 func testAlgorithm(file: FileHandle, difficulty: Int, execution: () -> Void) {
@@ -24,8 +41,8 @@ func testAlgorithm(file: FileHandle, difficulty: Int, execution: () -> Void) {
     }
 }
 
-func getTestArray(case: Cases, n: Int) -> [Int]{
-    switch `case` {
+func getTestArray(cs: Cases, n: Int) -> [Int]{
+    switch cs {
     case .BETTER:
         Array(0..<n)
     case .MEDIUM:

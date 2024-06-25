@@ -17,13 +17,13 @@ import Foundation
 
 
 let dirURL = URL(fileURLWithPath: "tests")
-let fileURL = dirURL.appending(path: "insertion-sort-medium.txt")
+let fileURL = dirURL.appending(path: getTestFileName(prefix: "selection-sort", cs: .BETTER))
 
 FileManager.default.createDirectoryIfNotExists(at: dirURL)
 
 openFile(url: fileURL) { file in
     for i in 1...1000 {
-        var arr = getTestArray(case: .MEDIUM, n: i)
+        var arr = getTestArray(cs: .MEDIUM, n: i)
         
         testAlgorithm(file: file, difficulty: i) {
             insertionSort(v: &arr, n: i)
