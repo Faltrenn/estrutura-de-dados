@@ -9,8 +9,8 @@ import Foundation
 
 func openFile(url: URL, execution: (FileHandle) -> Void) {
     do {
-        try "".write(to: fileURL, atomically: true, encoding: .utf8)
-        let file = try FileHandle(forWritingTo: fileURL)
+        try "".write(to: url, atomically: true, encoding: .utf8)
+        let file = try FileHandle(forWritingTo: url)
         
         execution(file)
         

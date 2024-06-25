@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum Cases {
+enum Cases: CaseIterable {
     case BETTER, MEDIUM, WORST
     
     var fileSuffix: String {

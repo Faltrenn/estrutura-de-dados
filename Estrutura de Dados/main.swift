@@ -17,16 +17,18 @@ import Foundation
 
 
 let dirURL = URL(fileURLWithPath: "tests")
-let fileURL = dirURL.appending(path: getTestFileName(prefix: "selection-sort", cs: .BETTER))
 
 FileManager.default.createDirectoryIfNotExists(at: dirURL)
 
-openFile(url: fileURL) { file in
-    for i in 1...1000 {
-        var arr = getTestArray(cs: .MEDIUM, n: i)
-        
-        testAlgorithm(file: file, difficulty: i) {
-            insertionSort(v: &arr, n: i)
+for cs in Cases.allCases {
+    let fileURL = dirURL.appending(path: getTestFileName(prefix: "insertion-sort", cs: cs))
+    openFile(url: fileURL) { file in
+        for i in 1...1000 {
+            var arr = getTestArray(cs: cs, n: i)
+            
+            testAlgorithm(file: file, difficulty: i) {
+                insertionSort(v: &arr, n: i)
+            }
         }
     }
 }
