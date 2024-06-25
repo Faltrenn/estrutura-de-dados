@@ -8,6 +8,10 @@
 import Foundation
 
 
+enum Cases {
+    case BETTER, MEDIUM, WORST
+}
+
 func testAlgorithm(file: FileHandle, difficulty: Int, execution: () -> Void) {
     let t1 = DispatchTime.now().uptimeNanoseconds
     execution()
@@ -17,6 +21,17 @@ func testAlgorithm(file: FileHandle, difficulty: Int, execution: () -> Void) {
     if let data = line.data(using: .utf8) {
         file.seekToEndOfFile()
         file.write(data)
+    }
+}
+
+func getTestArray(case: Cases, n: Int) -> [Int]{
+    switch `case` {
+    case .BETTER:
+        Array(0..<n)
+    case .MEDIUM:
+        getRandomArray(n: n)
+    case .WORST:
+        Array((0..<n).reversed())
     }
 }
 

@@ -19,8 +19,8 @@ import Foundation
 let fileURL = URL(fileURLWithPath: "arquivo.txt")
 
 openFile(url: fileURL) { file in
-    for i in 1...1000 {
-        var arr = getRandomArray(n: i)
+    for i in 1...10000 {
+        var arr = getTestArray(case: .BETTER, n: i)
         
         testAlgorithm(file: file, difficulty: i) {
             mergeSort(v: &arr, s: 0, e: i-1)
