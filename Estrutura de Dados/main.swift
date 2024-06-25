@@ -16,14 +16,23 @@ import Foundation
 //distributionSort(v: &arr, n: arr.count)
 
 
-let fileURL = URL(fileURLWithPath: "arquivo.txt")
+let dirURL = URL(fileURLWithPath: "tests")
+let fileURL = dirURL.appending(path: "insertion-sort-medium.txt")
+
+if !FileManager.default.directoryExists(dirURL) {
+    do{
+        try FileManager.default.createDirectory(at: dirURL, withIntermediateDirectories: false)
+    } catch {
+        print(error)
+    }
+}
 
 openFile(url: fileURL) { file in
-    for i in 1...10000 {
-        var arr = getTestArray(case: .BETTER, n: i)
+    for i in 1...1000 {
+        var arr = getTestArray(case: .MEDIUM, n: i)
         
         testAlgorithm(file: file, difficulty: i) {
-            mergeSort(v: &arr, s: 0, e: i-1)
+            insertionSort(v: &arr, n: i)
         }
     }
 }

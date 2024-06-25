@@ -5,13 +5,23 @@ from matplotlib.ticker import ScalarFormatter
 x_values = []
 y_values = []
 
-with open('arquivo.txt', 'r') as file:
-    for line in file:
-        x, y = map(int, line.split())
-        x_values.append(x)
-        y_values.append(y)
+files = ["selection-sort"]
+files_path = []
+for file in files:
+    for suffix in ("better", "medium", "worst"):
+        files_path.append(file + "-" + suffix + ".txt")
+ 
 
-plt.plot(x_values, y_values, color='b', label="selectionSort")
+colors = ["r", "g", "b"]
+
+x_values = list(range(1, 1001))
+for i, file in enumerate(files_path):
+    y_values.append([])
+    with open(file, 'r') as f:
+        for line in f:
+            x, y = map(int, line.split())
+            y_values[i].append(y)
+    plt.plot(x_values, y_values[i], color=colors[i], label=file)
 plt.xlabel('Tamanho')
 plt.ylabel('Tempo(ns)')
 plt.title('Gráfico de Linha')

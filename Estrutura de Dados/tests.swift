@@ -42,3 +42,11 @@ func getRandomArray(n: Int) -> [Int] {
     }
     return list
 }
+
+extension FileManager {
+    func directoryExists(_ path: URL) -> Bool {
+        var isDirectory : ObjCBool = true
+        let exists = FileManager.default.fileExists(atPath: path.path(percentEncoded: false), isDirectory: &isDirectory)
+        return exists && isDirectory.boolValue
+    }
+}
