@@ -5,7 +5,7 @@ from matplotlib.ticker import ScalarFormatter
 x_values = []
 y_values = []
 
-files = ["selection-sort"]
+files = ["insertion-sort"]
 files_path = []
 for file in files:
     for suffix in ("better", "medium", "worst"):
@@ -17,7 +17,7 @@ colors = ["r", "g", "b"]
 x_values = list(range(1, 1001))
 for i, file in enumerate(files_path):
     y_values.append([])
-    with open(file, 'r') as f:
+    with open("tests/" + file, 'r') as f:
         for line in f:
             x, y = map(int, line.split())
             y_values[i].append(y)
