@@ -19,13 +19,7 @@ import Foundation
 let dirURL = URL(fileURLWithPath: "tests")
 let fileURL = dirURL.appending(path: "insertion-sort-medium.txt")
 
-if !FileManager.default.directoryExists(dirURL) {
-    do{
-        try FileManager.default.createDirectory(at: dirURL, withIntermediateDirectories: false)
-    } catch {
-        print(error)
-    }
-}
+FileManager.default.createDirectoryIfNotExists(at: dirURL)
 
 openFile(url: fileURL) { file in
     for i in 1...1000 {

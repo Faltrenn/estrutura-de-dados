@@ -44,9 +44,19 @@ func getRandomArray(n: Int) -> [Int] {
 }
 
 extension FileManager {
-    func directoryExists(_ path: URL) -> Bool {
+    func directoryExists(at: URL) -> Bool {
         var isDirectory : ObjCBool = true
-        let exists = FileManager.default.fileExists(atPath: path.path(percentEncoded: false), isDirectory: &isDirectory)
+        let exists = FileManager.default.fileExists(atPath: at.path(percentEncoded: false), isDirectory: &isDirectory)
         return exists && isDirectory.boolValue
+    }
+    
+    func createDirectoryIfNotExists(at: URL) {
+        if !directoryExists(at: at) {
+            do{
+                try FileManager.default.createDirectory(at: at, withIntermediateDirectories: false)
+            } catch {
+                print(error)
+            }
+        }
     }
 }
