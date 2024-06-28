@@ -29,6 +29,7 @@
 		CC7A3A3B2C26016100827348 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CC7A3A4D2C28849200827348 /* algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algorithms.swift; sourceTree = "<group>"; };
 		CC7A3A4F2C29E22900827348 /* tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
+		CCAEF20E2C2F200E00F221C4 /* plot.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = plot.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		CC7A3A3A2C26016100827348 /* Estrutura de Dados */ = {
 			isa = PBXGroup;
 			children = (
+				CCAEF20E2C2F200E00F221C4 /* plot.py */,
 				CC7A3A3B2C26016100827348 /* main.swift */,
 				CC7A3A4D2C28849200827348 /* algorithms.swift */,
 				CC7A3A4F2C29E22900827348 /* tests.swift */,
