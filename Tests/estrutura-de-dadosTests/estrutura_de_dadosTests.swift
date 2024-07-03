@@ -3,7 +3,6 @@ import XCTest
 
 final class estrutura_de_dadosTests: XCTestCase {
     func testExample() throws {
-        print("oap")
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
 
