@@ -17,25 +17,32 @@ func openFile(url: URL, execution: (FileHandle) -> Void) throws {
     file.closeFile()
 }
 
-enum Cases: CaseIterable {
-    case BETTER, MEDIUM, WORST
+enum Algorithms: CaseIterable {
+    enum Cases: CaseIterable {
+        case better, medium, worst
+    }
     
-    var fileSuffix: String {
-        get {
-            switch self {
-            case .BETTER:
-                "better"
-            case .MEDIUM:
-                "medium"
-            case .WORST:
-                "worst"
-            }
+    case selection, insertion, merge, quick, distribution
+    
+    func hasCase(cs: Cases) -> Bool {
+        switch self {
+        case .selection:
+            return cs == .medium
+        case .insertion:
+            return true
+        case .merge:
+            return cs == .medium
+        case .quick:
+            return true
+        case .distribution:
+            return cs == .medium
         }
     }
+    
 }
 
-func getTestFileName(prefix: String, cs: Cases) -> String {
-    "\(prefix)-\(cs.fileSuffix).txt"
+func getTestFileName(prefix: String, cs: Algorithms.Cases) -> String {
+    "\(prefix)-\(String(describing: cs).lowercased()).txt"
 }
 
 func testAlgorithm(file: FileHandle, arr: inout [Int], difficulty: Int, execution: (inout [Int]) -> Void) {
@@ -50,13 +57,13 @@ func testAlgorithm(file: FileHandle, arr: inout [Int], difficulty: Int, executio
     }
 }
 
-func getTestArray(cs: Cases, n: Int) -> [Int]{
+func getTestArray(cs: Algorithms.Cases, n: Int) -> [Int]{
     switch cs {
-    case .BETTER:
+    case .better:
         Array(0..<n)
-    case .MEDIUM:
+    case .medium:
         getRandomArray(n: n)
-    case .WORST:
+    case .worst:
         Array((0..<n).reversed())
     }
 }
@@ -90,24 +97,6 @@ func getTestExecution(testName: String) -> (inout [Int]) -> Void {
     case _:
         return { (arr: inout [Int]) in
             distributionSort(v: &arr, n: arr.count)
-        }
-    }
-}
-
-extension FileManager {
-    func directoryExists(at: URL) -> Bool {
-        var isDirectory : ObjCBool = true
-        let exists = FileManager.default.fileExists(atPath: at.path(percentEncoded: false), isDirectory: &isDirectory)
-        return exists && isDirectory.boolValue
-    }
-    
-    func createDirectoryIfNotExists(at: URL) {
-        if !directoryExists(at: at) {
-            do{
-                try FileManager.default.createDirectory(at: at, withIntermediateDirectories: false)
-            } catch {
-                print(error)
-            }
         }
     }
 }
