@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+public func quickSort(v: inout [Int]) {
+    quickSort(v: &v, s: 0, e: v.count)
+}
+
 func quickSort(v: inout [Int], s: Int, e: Int) {
     if s < e {
         let p = partition(v: &v, s: s, e: e)

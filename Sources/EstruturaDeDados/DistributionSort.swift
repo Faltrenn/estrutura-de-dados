@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+public func distributionSort(v: inout [Int]) {
+    distributionSort(v: &v, n: v.count)
+}
+
 func distributionSort(v: inout [Int], n: Int) {
     let s = v.min()!
     let b = v.max()!

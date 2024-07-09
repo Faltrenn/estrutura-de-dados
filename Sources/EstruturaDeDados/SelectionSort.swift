@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+func selectionSort(v: inout [Int]) {
+    selectionSort(v: &v, n: v.count)
+}
+
 func selectionSort(v: inout [Int], n: Int) {
     for i in 0..<n-1 {
         var m = i

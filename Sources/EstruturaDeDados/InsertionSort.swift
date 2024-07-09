@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+public func insertionSort(v: inout [Int]) {
+    insertionSort(v: &v, n: v.count)
+}
+
 func insertionSort(v: inout [Int], n: Int) {
     for i in 1..<n {
         var j = i

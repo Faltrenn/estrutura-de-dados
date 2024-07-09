@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+public func mergeSort(v: inout [Int]) {
+    mergeSort(v: &v, s: 0, e: v.count)
+}
+
 func mergeSort(v: inout [Int], s: Int, e: Int) {
     if s < e {
         let m = (s+e)/2
