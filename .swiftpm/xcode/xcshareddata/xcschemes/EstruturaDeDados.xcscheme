@@ -56,9 +56,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "run"
-            BuildableName = "run"
-            BlueprintName = "run"
+            BlueprintIdentifier = "EstruturaDeDados"
+            BuildableName = "EstruturaDeDados"
+            BlueprintName = "EstruturaDeDados"
             ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>

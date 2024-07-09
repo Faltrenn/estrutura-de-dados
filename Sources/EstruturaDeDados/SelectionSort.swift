@@ -8,7 +8,7 @@
 import Foundation
 
 
-func selectionSort(v: inout [Int]) {
+public func selectionSort(v: inout [Int]) {
     selectionSort(v: &v, n: v.count)
 }
 
