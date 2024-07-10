@@ -9,7 +9,7 @@ import Foundation
 
 
 public func quickSort(v: inout [Int]) {
-    quickSort(v: &v, s: 0, e: v.count)
+    quickSort(v: &v, s: 0, e: v.count-1)
 }
 
 func quickSort(v: inout [Int], s: Int, e: Int) {

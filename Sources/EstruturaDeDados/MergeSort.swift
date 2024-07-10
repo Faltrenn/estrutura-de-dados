@@ -9,7 +9,7 @@ import Foundation
 
 
 public func mergeSort(v: inout [Int]) {
-    mergeSort(v: &v, s: 0, e: v.count)
+    mergeSort(v: &v, s: 0, e: v.count-1)
 }
 
 func mergeSort(v: inout [Int], s: Int, e: Int) {
