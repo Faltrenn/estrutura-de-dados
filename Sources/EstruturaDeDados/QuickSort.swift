@@ -21,13 +21,13 @@ func quickSort(v: inout [Int], s: Int, e: Int) {
 }
 
 func partition(v: inout [Int], s: Int, e: Int) -> Int {
-    var d = s - 1
+    var d = s
     for i in s..<(e) {
         if v[i] <= v[e] {
             v.swapAt(d, i)
             d += 1
         }
     }
-    v.swapAt(d+1, e)
-    return d + 1
+    v.swapAt(d, e)
+    return d
 }
