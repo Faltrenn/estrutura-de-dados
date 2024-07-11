@@ -1,6 +1,6 @@
 //
 //  QuickSort.swift
-//  
+//
 //
 //  Created by Emanuel on 03/07/24.
 //
@@ -28,6 +28,6 @@ func partition(v: inout [Int], s: Int, e: Int) -> Int {
             (v[d], v[i]) = (v[i], v[d])
         }
     }
-    (v[d + 1], v[e]) = (v[e], v[d + 1])
+    v.swapAt(d+1, e)
     return d + 1
 }
