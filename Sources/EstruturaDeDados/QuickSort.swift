@@ -25,7 +25,7 @@ func partition(v: inout [Int], s: Int, e: Int) -> Int {
     for i in s..<(e) {
         if v[i] <= v[e] {
             d += 1
-            (v[d], v[i]) = (v[i], v[d])
+            v.swapAt(d, i)
         }
     }
     v.swapAt(d+1, e)
