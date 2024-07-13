@@ -8,11 +8,11 @@
 import Foundation
 
 
-public func quickSort(v: inout [Int]) {
+public func quickSort(v: inout [Int32]) {
     quickSort(v: &v, s: 0, e: v.count-1)
 }
 
-func quickSort(v: inout [Int], s: Int, e: Int) {
+func quickSort(v: inout [Int32], s: Int, e: Int) {
     if s < e {
         let p = partition(v: &v, s: s, e: e)
         quickSort(v: &v, s: s, e: p - 1)
@@ -20,7 +20,7 @@ func quickSort(v: inout [Int], s: Int, e: Int) {
     }
 }
 
-func partition(v: inout [Int], s: Int, e: Int) -> Int {
+func partition(v: inout [Int32], s: Int, e: Int) -> Int {
     var d = s
     for i in s..<(e) {
         if v[i] <= v[e] {

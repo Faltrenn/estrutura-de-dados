@@ -8,11 +8,11 @@
 import Foundation
 
 
-public func selectionSort(v: inout [Int]) {
+public func selectionSort(v: inout [Int32]) {
     selectionSort(v: &v, n: v.count)
 }
 
-func selectionSort(v: inout [Int], n: Int) {
+func selectionSort(v: inout [Int32], n: Int) {
     for i in 0..<n-1 {
         var m = i
         for j in (i+1)..<n {
@@ -20,6 +20,6 @@ func selectionSort(v: inout [Int], n: Int) {
                 m = j
             }
         }
-        (v[i], v[m]) = (v[m], v[i])
+        v.swapAt(i, m)
     }
 }
